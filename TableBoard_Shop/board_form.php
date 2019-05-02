@@ -1,14 +1,3 @@
-<!-- 출처 : https://colorlib.com/wp/template/responsive-table-v1/ -->
-<?php
-if(isset($_GET[num])) {
-    $connect = mysql_connect('localhost', 'root', 'apmsetup');
-    mysql_select_db('kyj_db');
-
-    $sql = "select * from tableboard_shop where num=$_GET[num]";
-    $result = mysql_query($sql);
-    $row = mysql_fetch_array($result);
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,35 +37,28 @@ if(isset($_GET[num])) {
 				<div class="table100">
 					<table>
 						<thead>
-						<tr class="table100-head">
-							<th class="column1">Date</th>
-							<th class="column2">Order ID</th>
-							<th class="column3">Name</th>
-							<th class="column4">Price</th>
-							<th class="column5">Quantity</th>
-							<th class="column6">Total</th>
-						</tr>
+                        <tr class="table100-head">
+                            <th class="column1">Process Number</th>
+                            <th class="column2">Arrive Time</th>
+                            <th class="column3">Burst Time</th>
+                        </tr>
 						</thead>
 						<tbody>
 						<tr>
                             <?php
                             if(isset($_GET[num])) {
+                            $n = $_GET[num];
                             ?>
-                                <td class="column1"> <input name="date" type="text" value="<? echo $row[date] ?>" /> </td>
-                                <td class="column2"> <input name="order_id" type="number" value="<? echo $row[order_id] ?>" /> </td>
-                                <td class="column3"> <input name="name" type="text" value="<? echo $row[name] ?>" /> </td>
-                                <td class="column4"> <input name="price" type="number" placeholder="$" style="text-align: right;" value="<? echo $row[price] ?>" /> </td>
-                                <td class="column5"> <input name="quantity" type="number" value="<? echo $row[quantity] ?>" style="text-align: right;" /> </td>
-                                <td class="column6"> $<span id="total"> <? echo ($row[price] * $row[quantity]) ?> </span> </td>
+                            <td class="column1">P<? echo $processData[$n][0] ?></td>
+                            <td class="column2"><? echo $processData[$_GET[num]][1] ?></td>
+                            <td class="column3"><? echo $processData[$_GET[num]][2] ?></td>
+                        </tr>
                             <?php
                             } else {
                             ?>
                                 <td class="column1"> <input name="date" type="text" /> </td>
                                 <td class="column2"> <input name="order_id" type="number" /> </td>
                                 <td class="column3"> <input name="name" type="text" /> </td>
-                                <td class="column4"> <input name="price" type="number" placeholder="$" style="text-align: right;" /> </td>
-                                <td class="column5"> <input name="quantity" type="number" value="1" style="text-align: right;" /> </td>
-                                <td class="column6"> $<span id="total"></span> </td>
                             <?php
                             }
                             ?>

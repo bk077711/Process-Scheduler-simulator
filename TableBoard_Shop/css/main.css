@@ -107,11 +107,11 @@ iframe {
 .container-table100 {
   width: 100%;
   min-height: 100vh;
-  background: #202ce0;
-  background: -webkit-linear-gradient(45deg, #313bd0, #c8301c);
-  background: -o-linear-gradient(45deg, #313bd0, #c8301c);
-  background: -moz-linear-gradient(45deg, #313bd0, #c8301c);
-  background: linear-gradient(45deg, #313bd0, #c8301c);
+  background: #d03926;
+  background: -webkit-linear-gradient(45deg, #313bd0, #3bd030);
+  background: -o-linear-gradient(45deg, #15d0b4, #cad010);
+  background: -moz-linear-gradient(45deg, #d086c9, #ff6122);
+  background: linear-gradient(45deg, #ff69b4, #ff69b4 );
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -121,17 +121,17 @@ iframe {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 33px 30px;
+  padding: 100px 30px;
 }
 
 .wrap-table100 {
-  width: 1170px;
+  width: 1500px;
 }
 
 table {
   border-spacing: 1;
   border-collapse: collapse;
-  background: white;
+  background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   width: 100%;
@@ -170,19 +170,19 @@ table td.r, table th.r {
 
 .table100-head th{
   font-family: OpenSans-Regular;
-  font-size: 18px;
+  font-size: 24px;
   color: #fff;
   line-height: 1.2;
   font-weight: unset;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 tbody tr {
   font-family: OpenSans-Regular;
-  font-size: 15px;
+  font-size: 20px;
   color: #808080;
   line-height: 1.2;
   font-weight: unset;
@@ -195,34 +195,37 @@ tbody tr:hover {
 }
 
 .column1 {
-  width: 260px;
-  padding-left: 40px;
+  width: 160px;
+  padding-left: 150px;
+  margin-left: auto; margin-right: auto;
 }
 
 .column2 {
   width: 160px;
+  margin-left: auto; margin-right: auto;
 }
 
 .column3 {
-  width: 245px;
+  width: 160px;
+  margin-left: auto; margin-right: auto;
 }
-
 .column4 {
-  width: 110px;
-  text-align: right;
+  width: 160px;
+  padding-left: 200px;
+  margin-left: auto; margin-right: auto;
 }
 
 .column5 {
-  width: 170px;
-  text-align: right;
+  width: 160px;
+  padding-left: 40px;
+  margin-left: auto; margin-right: auto;
 }
 
 .column6 {
-  width: 222px;
-  text-align: right;
-  padding-right: 62px;
+  width: 160px;
+  padding-left: 40px;
+  margin-left: auto; margin-right: auto;
 }
-
 
 @media screen and (max-width: 992px) {
   table {

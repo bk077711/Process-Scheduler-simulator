@@ -1,13 +1,3 @@
-<?php
-    # TODO: MySQL 데이터베이스 연결 및 레코드 가져오기!
-$connect = mysql_connect('localhost', 'kdy', '1234');
-mysql_select_db('kdy_db');
-
-$sql = "select * from tableboard_shop";
-$result = mysql_query($sql);
-?>
-
-<!-- 출처 : https://colorlib.com/wp/template/responsive-table-v1/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +26,9 @@ $result = mysql_query($sql);
 <div class="limiter">
     <div class="container-table100">
         <div class="wrap-table100">
-            <a href="board_form.php" style="border: 1px; padding: 10px; background: #36304a; display: block; width: 100px; text-align: center; float: right; border-radius: 10px; margin-bottom: 5px;"> Add </a>
+            <a href="board_form.php" style="border: 1px; padding: 10px; background: #63f2e8; display: block; width: 100px; text-align: center; float: right; border-radius: 10px; margin-bottom: 5px;"> start </a>
+            <a href="board_form.php" style="border: 1px; padding: 10px; background: #63f2e8; display: block; width: 100px; text-align: center; float: right; border-radius: 10px; margin-bottom: 5px;"> Rest </a>
+            <a href="board_form.php" style="border: 1px; padding: 10px; background: #63f2e8; display: block; width: 100px; text-align: center; float: right; border-radius: 10px; margin-bottom: 5px;"> Add </a>
             <div class="table100">
                 <table>
                     <thead>
@@ -50,15 +42,24 @@ $result = mysql_query($sql);
                     <?php
                         # TODO : 아래 표시되는 내용을, MySQL 테이블에 있는 레코드로 대체하기!
                         # Note : column6 에 해당하는 Total 은 Price 값과 Quantity 값의 곱으로 표시!
-                        while($row = mysql_fetch_array($result)) {
-
+                    global $processData;
+                    $processData = array(
+                        array (1, 123, 456),
+                        array (2, 555, 123)
+                    );
+                    $processData[2] = array(3, 111, 789);
+                    $processData[3] = array(0, 1);
+                    $i = 0;
+                        while(count($processData[$i]) == 3)
+                        {
                     ?>
-                            <tr onclick="location.href = ('board_form.php?num=<? echo $row[num] ?>')">
-                                <td class="column1"><? echo $row[date] ?></td>
-                                <td class="column2"><? echo $row[order_id] ?></td>
-                                <td class="column3"><? echo $row[name] ?></td>
+                            <tr onclick="location.href = ('board_form.php?num=<? echo $i ?>')">
+                                <td class="column4">P<? echo $processData[$i][0] ?></td>
+                                <td class="column5"><? echo $processData[$i][1] ?></td>
+                                <td class="column6"><? echo $processData[$i][2] ?></td>
                             </tr>
                     <?php
+                            $i++;
                         }
                     ?>
                     </tbody>
