@@ -1,3 +1,3 @@
 <?php
-echo "ssibal"
+echo "ssibal";
 ?>
