@@ -40,16 +40,6 @@
                     </thead>
                     <tbody>
                     <?php
-                        # TODO : 아래 표시되는 내용을, MySQL 테이블에 있는 레코드로 대체하기!
-                        # Note : column6 에 해당하는 Total 은 Price 값과 Quantity 값의 곱으로 표시!
-                    global $processData;
-                    $processData = array(
-                        array (1, 123, 456),
-                        array (2, 555, 123)
-                    );
-                    $processData[2] = array(3, 111, 789);
-                    $processData[3] = array(0, 1);
-                    $i = 0;
                         while(count($processData[$i]) == 3)
                         {
                     ?>
